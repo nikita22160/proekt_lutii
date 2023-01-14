@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<header>
+    <img src="{% static 'img/logo.png' %}" alt="">
+    <h1>C# Програмист</h1>
+</header>
+
+<main>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Кто такой?</a>
+            </li>
+            <li>
+                <a href="{% url 'relevance' %}">Востребованность</a>
+            </li>
+            <li>
+                <a href="{% url 'geo' %}">География</a>
+            </li>
+            <li>
+                <a href="{% url 'skills' %}"><span>Навыки</span></a>
+            </li>
+            <li>
+                <a href="{% url 'vacancies' %}"><span>Последние вакансии</span></a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="main">
+        {% block main %}
+        {% endblock %}
+    </div>
+</main>
+
+
+<footer>
+    <span>Карасев Никита Денисович </span>
+    <span>РИ-210944</span>
+</footer>
+</body>
+</html>
